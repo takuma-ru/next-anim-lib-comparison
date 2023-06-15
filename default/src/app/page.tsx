@@ -4,8 +4,8 @@ const Page = () => {
   return (
     <main className={styles["page-body"]}>
       <div className={styles["title"]}>
-        <p>Case 1.</p>
-        <h1>Cannot use animation library ( JS+CSS only )</h1>
+        <p>Case 1</p>
+        <h1>Cannot use library ( JS+CSS only )</h1>
       </div>
       <div className={styles["contents"]}>
         <div className={styles["component"]}></div>
@@ -19,20 +19,28 @@ const Page = () => {
             </thead>
             <tbody>
               <tr>
-                <td>Accessibility</td>
-                <td>100</td>
+                <td>Build size</td>
+                <td className={styles["td-score"]}>
+                  100
+                  <span className={styles["unit"]}>KB</span>
+                </td>
               </tr>
               <tr>
-                <td>Best Practices</td>
-                <td>100</td>
+                <td>Amount implemented</td>
+                <td className={styles["td-score"]}>
+                  100
+                  <span className={styles["unit"]}>line</span>
+                  <br />
+                  100
+                  <span className={styles["unit"]}>code</span>
+                </td>
               </tr>
               <tr>
-                <td>Performance</td>
-                <td>100</td>
-              </tr>
-              <tr>
-                <td>SEO</td>
-                <td>100</td>
+                <td>Display FPS </td>
+                <td className={styles["td-score"]}>
+                  100
+                  <span className={styles["unit"]}>FPS</span>
+                </td>
               </tr>
             </tbody>
           </table>

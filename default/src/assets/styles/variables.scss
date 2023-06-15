@@ -36,3 +36,9 @@ $primary-light: $blue-light;
 $primary-lighter: $blue-lighter;
 
 // -- mixin --
+
+@mixin media-query-sp {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
