@@ -4,12 +4,18 @@
   "version": "1.0.0",
   "workspaces": {
     "packages": [
-      "default/**"
+      "default/**",
+      "framer-motion/**",
+      "react-spring/**"
     ]
   },
   "scripts": {
     "dev:default": "yarn default dev",
-    "default": "yarn workspace default"
+    "dev:framer": "yarn framer dev",
+    "dev:spring": "yarn spring dev",
+    "default": "yarn workspace default",
+    "framer": "yarn workspace framer-motion",
+    "spring": "yarn workspace react-spring"
   },
   "volta": {
     "node": "18.16.0",

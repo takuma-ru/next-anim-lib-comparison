@@ -1,0 +1,19 @@
+.accordion-component {
+  width: 400px;
+  border-bottom: $gray 1px solid;
+}
+
+.summary-main {
+  min-height: 56px;
+  font-size: 1.25rem;
+}
+
+.details-main {
+  padding: 1rem 0;
+}
+
+@include media-query-sp {
+  .accordion-component {
+    width: 100%;
+  }
+}
