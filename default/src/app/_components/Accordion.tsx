@@ -37,7 +37,7 @@ export const Accordion: React.FC = () => {
       ],
       animTiming
     );
-  }, [contentRef, isOpen]);
+  }, [contentRef]);
 
   const closeDetails = useCallback(() => {
     if (!contentRef.current) return;
