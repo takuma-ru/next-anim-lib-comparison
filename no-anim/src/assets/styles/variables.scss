@@ -1,0 +1,44 @@
+// -- colors --
+
+$white: #fffefd;
+$black: #1a1a1a;
+$gray: #e0e0e0;
+$gray-dark: #a0a0a0;
+$gray-light: #f0f0f0;
+$gray-lighter: #f8f8f8;
+$red: #ff8551;
+$red-dark: #ff5f3d;
+$red-light: #ffa07d;
+$red-lighter: #ffcdbf;
+$orange: #ffb851;
+$orange-dark: #ff9f3d;
+$orange-light: #ffc07d;
+$orange-lighter: #ffddbf;
+$yellow: #ffeb51;
+$yellow-dark: #ffdf3d;
+$yellow-light: #fff57d;
+$yellow-lighter: #fffdbf;
+$green: #47a992;
+$green-dark: #3d8c7d;
+$green-light: #7dbf9f;
+$green-lighter: #bfe0c7;
+$blue: #5199ff;
+$blue-dark: #3d7dff;
+$blue-light: #7da0ff;
+$blue-lighter: #bfd0ff;
+$purple: #b851ff;
+$purple-dark: #9f3dff;
+$purple-light: #c07dff;
+$purple-lighter: #ddbfef;
+$primary: $blue;
+$primary-dark: $blue-dark;
+$primary-light: $blue-light;
+$primary-lighter: $blue-lighter;
+
+// -- mixin --
+
+@mixin media-query-sp {
+  @media (max-width: 767px) {
+    @content;
+  }
+}

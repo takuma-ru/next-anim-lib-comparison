@@ -6,16 +6,10 @@
 .summary-main {
   min-height: 56px;
   font-size: 1.25rem;
-  padding-bottom: 1rem;
-  cursor: pointer;
 }
 
 .details-main {
-  overflow: hidden;
-
-  > .content {
-    padding: 1rem 0;
-  }
+  padding: 1rem 0;
 }
 
 @include media-query-sp {

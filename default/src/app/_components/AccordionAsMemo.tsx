@@ -8,7 +8,7 @@ const animTiming = {
   easing: "cubic-bezier(0.4, 0.0, 0.2, 1)",
 };
 
-export const Accordion: React.FC = () => {
+export const AccordionAsMemo: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const detailsRef = useRef<HTMLDetailsElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -19,6 +19,13 @@ export const Accordion: React.FC = () => {
 
     setIsOpen(true);
     detailsRef.current?.setAttribute("open", "");
+    /*
+      アコーディオンの要素は高さ指定がない。= height: auto
+      その状態では開閉アニメーションを行うことができない。
+      アニメーションさせるためには、高さを取得して指定しなければいけない。
+      アニメーションさせる際は useRef を使用しエレメントを取得してから高さを取得し、
+      animate関数を使用してアニメーションを行う。
+    */
     contentRef.current.animate(
       [
         {
@@ -72,6 +79,7 @@ export const Accordion: React.FC = () => {
           The Constitution of the United States of America
         </summary>
         <div ref={contentRef} className={styles["details-main"]}>
+          {/* アニメーションさせたい要素にpaddingをつけるとガクつきが発生するため、要素を一つ増やさないといけない */}
           <div className={styles["content"]}>
             <h3>The Constitution of the United States of America (1787)</h3>
             <span>
