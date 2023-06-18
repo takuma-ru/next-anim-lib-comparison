@@ -1,3 +1,4 @@
+import { Accordion } from "./_components/Accordion";
 import styles from "./page.module.scss";
 
 const Page = () => {
@@ -8,7 +9,9 @@ const Page = () => {
         <h1>react-spring</h1>
       </div>
       <div className={styles["contents"]}>
-        <div className={styles["component"]}></div>
+        <div className={styles["component"]}>
+          <Accordion />
+        </div>
         <div className={styles["score"]}>
           <table>
             <thead>

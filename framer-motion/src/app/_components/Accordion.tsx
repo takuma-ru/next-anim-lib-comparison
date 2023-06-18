@@ -36,6 +36,7 @@ export const Accordion: React.FC = () => {
     },
     [closeDetails, openDetails, isOpen]
   );
+
   return (
     <>
       <details className={styles["accordion-component"]} open={isOpen}>
