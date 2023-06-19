@@ -1,35 +1,53 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
+import BezierEasing from "bezier-easing";
 
 import styles from "./Accordion.module.scss";
 
 export const Accordion: React.FC = () => {
+  const [isAnimated, setIsAnimated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const [springs, api] = useSpring(() => ({
+    from: { height: 0 },
+    config: {
+      easing: BezierEasing(0.4, 0, 0.2, 1),
+      duration: 400,
+    },
+    onRest(result) {
+      if (result.value.height === 0) setIsOpen(false);
+    },
+  }));
+
+  const openDetails = useCallback(() => {
+    setIsOpen(true);
+
+    api.start({
+      height: contentRef.current?.offsetHeight,
+    });
+  }, [api, contentRef]);
+
+  const closeDetails = useCallback(() => {
+    api.start({
+      height: 0,
+    });
+  }, [api]);
 
   const handleClickDetails = useCallback(
     (e: React.MouseEvent<HTMLDetailsElement>) => {
       e.preventDefault();
 
-      setIsOpen((prev) => !prev);
+      if (isOpen) return closeDetails();
+      openDetails();
     },
-    [setIsOpen]
+    [closeDetails, openDetails, isOpen]
   );
-
-  const contentRefHeight = useMemo(() => {
-    return contentRef.current?.offsetHeight;
-  }, [contentRef]);
-
-  const { ...props } = useSpring({
-    height: isOpen ? contentRefHeight : "0px",
-    config: { duration: 300 },
-  });
 
   return (
     <>
-      {contentRefHeight}
       <details className={styles["accordion-component"]} open={isOpen}>
         <summary
           className={styles["summary-main"]}
@@ -37,7 +55,7 @@ export const Accordion: React.FC = () => {
         >
           The Constitution of the United States of America
         </summary>
-        <animated.div className={styles["details-main"]} style={{ ...props }}>
+        <animated.div className={styles["details-main"]} style={{ ...springs }}>
           <div ref={contentRef} className={styles["content"]}>
             <h3>The Constitution of the United States of America (1787)</h3>
             <span>
