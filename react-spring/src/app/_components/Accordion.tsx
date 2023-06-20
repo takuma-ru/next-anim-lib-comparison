@@ -1,13 +1,12 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
 import BezierEasing from "bezier-easing";
+import { useCallback, useRef, useState } from "react";
 
 import styles from "./Accordion.module.scss";
 
 export const Accordion: React.FC = () => {
-  const [isAnimated, setIsAnimated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 

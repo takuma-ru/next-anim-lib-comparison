@@ -12,42 +12,6 @@ const Page = () => {
         <div className={styles["component"]}>
           <Accordion />
         </div>
-        <div className={styles["score"]}>
-          <table>
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Build size</td>
-                <td className={styles["td-score"]}>
-                  100
-                  <span className={styles["unit"]}>KB</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Amount implemented</td>
-                <td className={styles["td-score"]}>
-                  100
-                  <span className={styles["unit"]}>line</span>
-                  <br />
-                  100
-                  <span className={styles["unit"]}>code</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Display FPS </td>
-                <td className={styles["td-score"]}>
-                  100
-                  <span className={styles["unit"]}>FPS</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
     </main>
   );

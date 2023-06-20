@@ -15,7 +15,6 @@ export const Accordion: React.FC = () => {
 
   const openDetails = useCallback(() => {
     if (!contentRef.current) return;
-    console.log(contentRef.current.offsetHeight);
 
     setIsOpen(true);
     detailsRef.current?.setAttribute("open", "");
