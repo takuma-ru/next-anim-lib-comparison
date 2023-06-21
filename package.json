@@ -5,6 +5,7 @@
   "workspaces": {
     "packages": [
       "default/**",
+      "no-anim/**",
       "framer-motion/**",
       "react-spring/**"
     ]
@@ -13,9 +14,11 @@
     "dev:default": "yarn default dev",
     "dev:framer": "yarn framer dev",
     "dev:spring": "yarn spring dev",
+    "dev:no": "yarn no-anim dev",
     "default": "yarn workspace default",
     "framer": "yarn workspace framer-motion",
-    "spring": "yarn workspace react-spring"
+    "spring": "yarn workspace react-spring",
+    "no-anim": "yarn workspace no-amin"
   },
   "volta": {
     "node": "18.16.0",
